@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>辰信制冷 - 专业工业制冷解决方案 | 厂家批发底价</title>
+    <style>
+        :root {
+            --primary-blue: #00549f;
+            --light-gray: #f8f9fa;
+            --dark-gray: #333729;
+            --text-gray: #666;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            border-left: 2px solid var(--primary-blue);
+            margin-left: 10px;
+            padding-left: 10px;
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 500px;
+            background: linear-gradient(rgba(0, 84, 159, 0.7), rgba(0, 84, 159, 0.7)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-content {
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background: var(--white);
+            color: var(--primary-blue);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Products Section */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary-blue);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid #eee;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+            border-radius: 8px;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            border-color: var(--primary-blue);
+        }
+
+        .product-card h3 {
+            margin: 20px 0 15px;
+            color: var(--primary-blue);
+        }
+
+        .product-card p {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--light-gray);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+
+        .feature-icon {
+            background: var(--primary-blue);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+            font-size: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--white);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul a:hover {
+            color: var(--white);
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="#" class="logo">辰信制冷<span>Chenxin Cooling</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#products">产品中心</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <h1>辰信制冷 - 节能制冷领航者</h1>
+            <p>厂家批发底价 · 能耗更低 · 专业工业制冷解决方案</p>
+            <a href="#contact" class="btn">立即咨询</a>
+        </div>
+    </div>
+</div>
+
+<section id="products">
+    <div class="container">
+        <div class="section-title">
+            <h2>产品中心</h2>
+            <p>提供高性能、高可靠性的全系列制冷设备</p>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div style="font-size: 40px; color: var(--primary-blue);">❄️</div>
+                <h3>冷凝器</h3>
+                <p>高效换热，结构紧凑，适配多种工业环境。</p>
+            </div>
+            <div class="product-card">
+                <div style="font-size: 40px; color: var(--primary-blue);">💧</div>
+                <h3>蒸发器</h3>
+                <p>先进工艺，耐腐蚀设计，确保系统长期稳定运行。</p>
+            </div>
+            <div class="product-card">
+                <div style="font-size: 40px; color: var(--primary-blue);">🏢</div>
+                <h3>空调整机</h3>
+                <p>商用及工业级全案设计，精准温控，极低能耗。</p>
+            </div>
+            <div class="product-card">
+                <div style="font-size: 40px; color: var(--primary-blue);">🔥</div>
+                <h3>吸收式制冷</h3>
+                <p>利用余热/废热，环保节能的最佳选择。</p>
+            </div>
+            <div class="product-card">
+                <div style="font-size: 40px; color: var(--primary-blue);">⚡</div>
+                <h3>电制冷机组</h3>
+                <p>高COP值，智能控制，广泛应用于大型建筑制冷。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features" id="about">
+    <div class="container">
+        <div class="section-title">
+            <h2>核心技术与优势</h2>
+            <p>辰信制冷，为您节省每一分运营成本</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+            <div class="feature-item">
+                <div class="feature-icon">📉</div>
+                <div>
+                    <h3>极低能耗</h3>
+                    <p>采用新一代节能技术，较传统设备节能20%以上，助力绿色生产。</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💰</div>
+                <div>
+                    <h3>厂家批发底价</h3>
+                    <p>直连厂家，省去中间环节，以最具竞争力的批发价格交付，确保您的投资回报率。</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🛠️</div>
+                <div>
+                    <h3>专业定制</h3>
+                    <p>根据客户现场需求，提供从设计、选型到安装调试的全流程定制化服务。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>辰信制冷</h4>
+                <p style="color: rgba(255,255,255,0.7); font-size: 14px;">专注高效制冷技术，以科技创造价值，以品质赢得信任。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#home">网站首页</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#products">产品中心</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul class="contact-info">
+                    <li>📞 电话：13918039323</li>
+                    <li>📧 邮箱：info@chenxin-cooling.com</li>
+                    <li>📍 地址：工业园区制冷设备生产基地（请根据实际修改）</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 辰信制冷 版权所有 | 厂家批发直销
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
