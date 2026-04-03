@@ -86,31 +86,106 @@
         }
 
         /* Hero Section */
-        .hero {
-            height: 500px;
-            background: linear-gradient(rgba(0, 84, 159, 0.7), rgba(0, 84, 159, 0.7)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        .hero-slider {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .slides {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
-            color: var(--white);
-            text-align: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 84, 159, 0.4);
         }
 
         .hero-content {
-            width: 100%;
+            position: relative;
+            z-index: 10;
+            color: var(--white);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .hero h1 {
             font-size: 48px;
             margin-bottom: 20px;
             letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero p {
             font-size: 20px;
             margin-bottom: 30px;
             opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.3);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            z-index: 20;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .slider-btn:hover {
+            background: rgba(255,255,255,0.6);
+        }
+
+        .prev { left: 20px; }
+        .next { right: 20px; }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: var(--white);
+            transform: scale(1.2);
         }
 
         .btn {
@@ -178,6 +253,16 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transform: translateY(-5px);
             border-color: var(--primary-blue);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-bottom: 15px;
+            background-color: #fff;
         }
 
         .product-card h3 {
@@ -308,14 +393,43 @@
     </div>
 </header>
 
-<div class="hero" id="home">
-    <div class="container">
-        <div class="hero-content">
-            <h1>辰信制冷 - 节能制冷领航者</h1>
-            <p>厂家批发底价 · 能耗更低 · 专业工业制冷解决方案</p>
-            <a href="#contact" class="btn">立即咨询</a>
+<div class="hero-slider" id="home">
+    <div class="slides">
+        <div class="slide" style="background-image: url('images/banner-0.jpg')">
+            <div class="hero-content">
+                <h1>辰信制冷 - 节能制冷领航者</h1>
+                <p>厂家批发底价 · 能耗更低 · 专业工业制冷解决方案</p>
+                <a href="#contact" class="btn">立即咨询</a>
+            </div>
         </div>
+        <div class="slide" style="background-image: url('images/banner-1.jpg')">
+            <div class="hero-content">
+                <h1>专业冷凝器与蒸发器生产</h1>
+                <p>先进工艺 · 结构紧凑 · 适配多种环境</p>
+                <a href="#products" class="btn">查看产品</a>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('images/banner-2.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner-3.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner-4.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner-5.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner-6.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner-7.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner-8.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner-9.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner-10.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner-11.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner-12.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner-13.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner-14.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner-15.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner-16.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner-17.png')"></div>
+        <div class="slide" style="background-image: url('images/banner-18.jpg')"></div>
     </div>
+    <button class="slider-btn prev">❮</button>
+    <button class="slider-btn next">❯</button>
+    <div class="slider-dots"></div>
 </div>
 
 <section id="products">
@@ -326,27 +440,27 @@
         </div>
         <div class="product-grid">
             <div class="product-card">
-                <div style="font-size: 40px; color: var(--primary-blue);">❄️</div>
+                <div class="product-image" style="background-image: url('https://s.alicdn.com/@sc04/kf/H3a0cf6e7f9cb4333a8bd07bc7c0f9630B.jpg_300x300.jpg');"></div>
                 <h3>冷凝器</h3>
                 <p>高效换热，结构紧凑，适配多种工业环境。</p>
             </div>
             <div class="product-card">
-                <div style="font-size: 40px; color: var(--primary-blue);">💧</div>
+                <div class="product-image" style="background-image: url('https://sc02.alicdn.com/kf/Af4993661c3a1472bb2cc9663a9533734D.png');"></div>
                 <h3>蒸发器</h3>
                 <p>先进工艺，耐腐蚀设计，确保系统长期稳定运行。</p>
             </div>
             <div class="product-card">
-                <div style="font-size: 40px; color: var(--primary-blue);">🏢</div>
+                <div class="product-image" style="background-image: url('https://sc02.alicdn.com/kf/A1ac7b3dfdf1d43eb8160013c996ec1c8z.png');"></div>
                 <h3>空调整机</h3>
                 <p>商用及工业级全案设计，精准温控，极低能耗。</p>
             </div>
             <div class="product-card">
-                <div style="font-size: 40px; color: var(--primary-blue);">🔥</div>
+                <div class="product-image" style="background-image: url('https://sc02.alicdn.com/kf/Aa5a978dc2cfb42f89fca3608050732bb7.png');"></div>
                 <h3>吸收式制冷</h3>
                 <p>利用余热/废热，环保节能的最佳选择。</p>
             </div>
             <div class="product-card">
-                <div style="font-size: 40px; color: var(--primary-blue);">⚡</div>
+                <div class="product-image" style="background-image: url('https://sc02.alicdn.com/kf/A3b259b98522a46c98bcdfa513e805d86y.png');"></div>
                 <h3>电制冷机组</h3>
                 <p>高COP值，智能控制，广泛应用于大型建筑制冷。</p>
             </div>
@@ -406,7 +520,7 @@
                 <h4>联系我们</h4>
                 <ul class="contact-info">
                     <li>📞 电话：13918039323</li>
-                    <li>📧 邮箱：info@chenxin-cooling.com</li>
+                    <li>📧 邮箱：1907853490@qq.com</li>
                     <li>📍 地址：中国浙江省绍兴市嵊州浦口街道浦南大道379号</li>
                 </ul>
             </div>
@@ -417,5 +531,53 @@
     </div>
 </footer>
 
+<script>
+    const slides = document.querySelector('.slides');
+    const slideItems = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    const dotsContainer = document.querySelector('.slider-dots');
+
+    let currentIndex = 0;
+    const totalSlides = slideItems.length;
+
+    // Create dots
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    }
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        if (currentIndex < 0) currentIndex = totalSlides - 1;
+        if (currentIndex >= totalSlides) currentIndex = 0;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateDots();
+    }
+
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+
+    // Auto play
+    let slideInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
+
+    // Pause on hover
+    const slider = document.querySelector('.hero-slider');
+    slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    slider.addEventListener('mouseleave', () => {
+        slideInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
+    });
+</script>
 </body>
 </html>
